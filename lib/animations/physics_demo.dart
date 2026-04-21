@@ -7,7 +7,8 @@ class PhysicsSpringDemo extends StatefulWidget {
   State<PhysicsSpringDemo> createState() => _PhysicsSpringDemoState();
 }
 
-class _PhysicsSpringDemoState extends State<PhysicsSpringDemo> with SingleTickerProviderStateMixin {
+class _PhysicsSpringDemoState extends State<PhysicsSpringDemo>
+    with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   Offset _dragOffset = Offset.zero;
 
@@ -55,9 +56,13 @@ class _PhysicsSpringDemoState extends State<PhysicsSpringDemo> with SingleTicker
             decoration: const BoxDecoration(
               color: Colors.greenAccent,
               shape: BoxShape.circle,
-              boxShadow: [BoxShadow(color: Colors.black26, blurRadius: 10, offset: Offset(0, 5))],
+              boxShadow: [
+                BoxShadow(
+                    color: Colors.black26, blurRadius: 10, offset: Offset(0, 5))
+              ],
             ),
-            child: const Icon(Icons.drag_indicator, color: Colors.black, size: 50),
+            child:
+                const Icon(Icons.drag_indicator, color: Colors.black, size: 50),
           ),
         ),
       ),

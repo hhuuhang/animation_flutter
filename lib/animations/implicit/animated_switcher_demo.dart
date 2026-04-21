@@ -24,7 +24,10 @@ class _AnimatedSwitcherDemoState extends State<AnimatedSwitcherDemo> {
             child: Text(
               '$_count',
               key: ValueKey<int>(_count),
-              style: const TextStyle(fontSize: 80, fontWeight: FontWeight.bold, color: Colors.cyan),
+              style: const TextStyle(
+                  fontSize: 80,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.cyan),
             ),
           ),
           const SizedBox(height: 40),

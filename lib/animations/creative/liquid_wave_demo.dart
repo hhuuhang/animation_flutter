@@ -8,7 +8,8 @@ class LiquidWaveDemo extends StatefulWidget {
   State<LiquidWaveDemo> createState() => _LiquidWaveDemoState();
 }
 
-class _LiquidWaveDemoState extends State<LiquidWaveDemo> with SingleTickerProviderStateMixin {
+class _LiquidWaveDemoState extends State<LiquidWaveDemo>
+    with SingleTickerProviderStateMixin {
   late AnimationController _controller;
 
   @override
@@ -36,7 +37,10 @@ class _LiquidWaveDemoState extends State<LiquidWaveDemo> with SingleTickerProvid
           shape: BoxShape.circle,
           border: Border.all(color: Colors.cyan, width: 4),
           boxShadow: [
-            BoxShadow(color: Colors.cyan.withOpacity(0.3), blurRadius: 20, spreadRadius: 5),
+            BoxShadow(
+                color: Colors.cyan.withOpacity(0.3),
+                blurRadius: 20,
+                spreadRadius: 5),
           ],
         ),
         child: ClipOval(
@@ -75,7 +79,9 @@ class WavePainter extends CustomPainter {
 
     path.moveTo(0, size.height);
     for (double x = 0; x <= size.width; x++) {
-      final y = amplitude * math.sin((2 * math.pi * x / waveLength) + (animationValue * 2 * math.pi));
+      final y = amplitude *
+          math.sin(
+              (2 * math.pi * x / waveLength) + (animationValue * 2 * math.pi));
       path.lineTo(x, y + yOffset);
     }
     path.lineTo(size.width, size.height);
@@ -88,7 +94,10 @@ class WavePainter extends CustomPainter {
     final path2 = Path();
     path2.moveTo(0, size.height);
     for (double x = 0; x <= size.width; x++) {
-      final y = amplitude * math.sin((2 * math.pi * x / waveLength) + (animationValue * 2 * math.pi) + math.pi);
+      final y = amplitude *
+          math.sin((2 * math.pi * x / waveLength) +
+              (animationValue * 2 * math.pi) +
+              math.pi);
       path2.lineTo(x, y + yOffset + 10);
     }
     path2.lineTo(size.width, size.height);

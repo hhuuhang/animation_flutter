@@ -20,9 +20,12 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final filteredItems = animationRegistry.where((item) {
-      final matchesCategory = _selectedCategory == null || item.category == _selectedCategory;
-      final matchesSearch = item.name.toLowerCase().contains(_searchQuery.toLowerCase()) || 
-                           item.description.toLowerCase().contains(_searchQuery.toLowerCase());
+      final matchesCategory =
+          _selectedCategory == null || item.category == _selectedCategory;
+      final matchesSearch = item.name
+              .toLowerCase()
+              .contains(_searchQuery.toLowerCase()) ||
+          item.description.toLowerCase().contains(_searchQuery.toLowerCase());
       return matchesCategory && matchesSearch;
     }).toList();
 
@@ -35,7 +38,8 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                 child: TextField(
                   controller: _searchController,
                   onChanged: (value) => setState(() => _searchQuery = value),
@@ -59,20 +63,23 @@ class _HomeScreenState extends State<HomeScreen> {
                     FilterChip(
                       label: const Text('All'),
                       selected: _selectedCategory == null,
-                      onSelected: (_) => setState(() => _selectedCategory = null),
+                      onSelected: (_) =>
+                          setState(() => _selectedCategory = null),
                       selectedColor: const Color(0xFF6C63FF).withOpacity(0.3),
                     ),
                     const SizedBox(width: 8),
                     ...AnimationCategory.values.map((cat) => Padding(
-                      padding: const EdgeInsets.only(right: 8),
-                      child: FilterChip(
-                        avatar: Icon(cat.icon, size: 16),
-                        label: Text(cat.label),
-                        selected: _selectedCategory == cat,
-                        onSelected: (_) => setState(() => _selectedCategory = cat),
-                        selectedColor: const Color(0xFF6C63FF).withOpacity(0.3),
-                      ),
-                    )),
+                          padding: const EdgeInsets.only(right: 8),
+                          child: FilterChip(
+                            avatar: Icon(cat.icon, size: 16),
+                            label: Text(cat.label),
+                            selected: _selectedCategory == cat,
+                            onSelected: (_) =>
+                                setState(() => _selectedCategory = cat),
+                            selectedColor:
+                                const Color(0xFF6C63FF).withOpacity(0.3),
+                          ),
+                        )),
                   ],
                 ),
               ),

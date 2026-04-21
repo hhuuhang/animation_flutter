@@ -45,7 +45,8 @@ class AppDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: const Icon(Icons.apps, color: Colors.white70),
-            title: const Text('All Animations', style: TextStyle(color: Colors.white)),
+            title: const Text('All Animations',
+                style: TextStyle(color: Colors.white)),
             selected: selectedCategory == null,
             selectedTileColor: Colors.white.withOpacity(0.1),
             onTap: () {
@@ -74,7 +75,8 @@ class AppDrawer extends StatelessWidget {
                 final category = AnimationCategory.values[index];
                 return ListTile(
                   leading: Icon(category.icon, color: Colors.white70),
-                  title: Text(category.label, style: const TextStyle(color: Colors.white)),
+                  title: Text(category.label,
+                      style: const TextStyle(color: Colors.white)),
                   selected: selectedCategory == category,
                   selectedTileColor: Colors.white.withOpacity(0.1),
                   onTap: () {

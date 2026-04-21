@@ -8,7 +8,8 @@ class ParticleGalaxyDemo extends StatefulWidget {
   State<ParticleGalaxyDemo> createState() => _ParticleGalaxyDemoState();
 }
 
-class _ParticleGalaxyDemoState extends State<ParticleGalaxyDemo> with SingleTickerProviderStateMixin {
+class _ParticleGalaxyDemoState extends State<ParticleGalaxyDemo>
+    with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   final List<Particle> _particles = List.generate(50, (index) => Particle());
 
@@ -53,7 +54,8 @@ class Particle {
   double vx = (math.Random().nextDouble() - 0.5) * 2;
   double vy = (math.Random().nextDouble() - 0.5) * 2;
   double size = math.Random().nextDouble() * 4 + 1;
-  Color color = Colors.primaries[math.Random().nextInt(Colors.primaries.length)].withOpacity(0.6);
+  Color color = Colors.primaries[math.Random().nextInt(Colors.primaries.length)]
+      .withOpacity(0.6);
 
   void update() {
     x += vx;
@@ -69,12 +71,13 @@ class GalaxyPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    final paint = Paint()..maskFilter = const MaskFilter.blur(BlurStyle.normal, 2);
-    
+    final paint = Paint()
+      ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 2);
+
     for (var p in particles) {
       paint.color = p.color;
       canvas.drawCircle(Offset(p.x, p.y), p.size, paint);
-      
+
       // Draw faint lines between close particles
       for (var other in particles) {
         final dist = (Offset(p.x, p.y) - Offset(other.x, other.y)).distance;
@@ -82,7 +85,8 @@ class GalaxyPainter extends CustomPainter {
           final linePaint = Paint()
             ..color = p.color.withOpacity(0.1 * (1 - dist / 50))
             ..strokeWidth = 0.5;
-          canvas.drawLine(Offset(p.x, p.y), Offset(other.x, other.y), linePaint);
+          canvas.drawLine(
+              Offset(p.x, p.y), Offset(other.x, other.y), linePaint);
         }
       }
     }

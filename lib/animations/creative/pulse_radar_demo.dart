@@ -7,7 +7,8 @@ class PulseRadarDemo extends StatefulWidget {
   State<PulseRadarDemo> createState() => _PulseRadarDemoState();
 }
 
-class _PulseRadarDemoState extends State<PulseRadarDemo> with SingleTickerProviderStateMixin {
+class _PulseRadarDemoState extends State<PulseRadarDemo>
+    with SingleTickerProviderStateMixin {
   late AnimationController _controller;
 
   @override

@@ -29,7 +29,10 @@ class _AnimatedPaddingDemoState extends State<AnimatedPaddingDemo> {
             child: const Center(
               child: Text(
                 'Padding Magic',
-                style: TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold),
               ),
             ),
           ),

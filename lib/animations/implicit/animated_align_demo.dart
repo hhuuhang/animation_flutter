@@ -18,7 +18,8 @@ class _AnimatedAlignDemoState extends State<AnimatedAlignDemo> {
           child: Stack(
             children: [
               AnimatedAlign(
-                alignment: _atTop ? Alignment.topCenter : Alignment.bottomCenter,
+                alignment:
+                    _atTop ? Alignment.topCenter : Alignment.bottomCenter,
                 duration: const Duration(seconds: 1),
                 curve: Curves.elasticOut,
                 child: Container(

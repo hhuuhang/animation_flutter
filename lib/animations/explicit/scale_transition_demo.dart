@@ -7,12 +7,13 @@ class ScaleTransitionDemo extends StatefulWidget {
   State<ScaleTransitionDemo> createState() => _ScaleTransitionDemoState();
 }
 
-class _ScaleTransitionDemoState extends State<ScaleTransitionDemo> with TickerProviderStateMixin {
+class _ScaleTransitionDemoState extends State<ScaleTransitionDemo>
+    with TickerProviderStateMixin {
   late final AnimationController _controller = AnimationController(
     duration: const Duration(seconds: 1),
     vsync: this,
   )..repeat(reverse: true);
-  
+
   late final Animation<double> _animation = CurvedAnimation(
     parent: _controller,
     curve: Curves.fastOutSlowIn,
@@ -36,7 +37,8 @@ class _ScaleTransitionDemoState extends State<ScaleTransitionDemo> with TickerPr
             color: Colors.orange,
             shape: BoxShape.circle,
           ),
-          child: const Icon(Icons.notifications_active, color: Colors.white, size: 60),
+          child: const Icon(Icons.notifications_active,
+              color: Colors.white, size: 60),
         ),
       ),
     );

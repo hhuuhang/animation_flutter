@@ -7,7 +7,8 @@ class StaggeredMenuDemo extends StatefulWidget {
   State<StaggeredMenuDemo> createState() => _StaggeredMenuDemoState();
 }
 
-class _StaggeredMenuDemoState extends State<StaggeredMenuDemo> with SingleTickerProviderStateMixin {
+class _StaggeredMenuDemoState extends State<StaggeredMenuDemo>
+    with SingleTickerProviderStateMixin {
   late AnimationController _controller;
 
   @override
@@ -63,7 +64,8 @@ class _StaggeredMenuDemoState extends State<StaggeredMenuDemo> with SingleTicker
                     child: Opacity(
                       opacity: animation.value,
                       child: Container(
-                        margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+                        margin: const EdgeInsets.symmetric(
+                            horizontal: 20, vertical: 8),
                         height: 60,
                         decoration: BoxDecoration(
                           color: Colors.white.withOpacity(0.1),
@@ -72,11 +74,15 @@ class _StaggeredMenuDemoState extends State<StaggeredMenuDemo> with SingleTicker
                         ),
                         child: ListTile(
                           leading: CircleAvatar(
-                            backgroundColor: Colors.primaries[index % Colors.primaries.length],
+                            backgroundColor: Colors
+                                .primaries[index % Colors.primaries.length],
                             child: Text('${index + 1}'),
                           ),
-                          title: Text('Menu Item ${index + 1}', style: const TextStyle(color: Colors.white)),
-                          subtitle: const Text('Tap to expand', style: TextStyle(color: Colors.white60, fontSize: 12)),
+                          title: Text('Menu Item ${index + 1}',
+                              style: const TextStyle(color: Colors.white)),
+                          subtitle: const Text('Tap to expand',
+                              style: TextStyle(
+                                  color: Colors.white60, fontSize: 12)),
                         ),
                       ),
                     ),

@@ -7,7 +7,8 @@ class RotationTransitionDemo extends StatefulWidget {
   State<RotationTransitionDemo> createState() => _RotationTransitionDemoState();
 }
 
-class _RotationTransitionDemoState extends State<RotationTransitionDemo> with TickerProviderStateMixin {
+class _RotationTransitionDemoState extends State<RotationTransitionDemo>
+    with TickerProviderStateMixin {
   late final AnimationController _controller = AnimationController(
     duration: const Duration(seconds: 3),
     vsync: this,
