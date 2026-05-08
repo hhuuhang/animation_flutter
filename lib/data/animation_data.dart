@@ -33,6 +33,16 @@ import '../animations/page_transitions/page_route_parallax_demo.dart';
 import '../animations/physics_demo.dart';
 import '../animations/staggered_demo.dart';
 import '../animations/staggered_stats_demo.dart';
+import '../animations/creative/neon_glow_demo.dart';
+import '../animations/creative/gooey_blob_demo.dart';
+import '../animations/creative/confetti_demo.dart';
+import '../animations/creative/water_ripple_demo.dart';
+import '../animations/creative/glitch_text_demo.dart';
+import '../animations/creative/matrix_rain_demo.dart';
+import '../animations/explicit/circular_fab_menu_demo.dart';
+import '../animations/explicit/typing_indicator_demo.dart';
+import '../animations/implicit/jelly_button_demo.dart';
+import '../animations/implicit/magnetic_button_demo.dart';
 
 final List<AnimationItem> animationRegistry = [
   // --- Creative & Custom Painter ---
@@ -360,5 +370,95 @@ final List<AnimationItem> animationRegistry = [
     accentColor: const Color(0xFF38BDF8),
     builder: () => const OrbitPulseDemo(),
     sourceCode: orbitPulseCode,
+  ),
+  AnimationItem(
+    id: 'neon_glow',
+    name: 'Neon Glow Button',
+    description: 'A pulsating neon sign effect with multiple layered box shadows.',
+    category: AnimationCategory.explicit,
+    accentColor: Colors.cyanAccent,
+    builder: () => const NeonGlowDemo(),
+    sourceCode: neonGlowCode,
+  ),
+  AnimationItem(
+    id: 'gooey_blob',
+    name: 'Gooey Blob',
+    description: 'A continuously morphing, organic shape using animated borderRadius.',
+    category: AnimationCategory.explicit,
+    accentColor: Colors.orangeAccent,
+    builder: () => const GooeyBlobDemo(),
+    sourceCode: gooeyBlobCode,
+  ),
+  AnimationItem(
+    id: 'confetti_explosion',
+    name: 'Confetti Explosion',
+    description: 'A custom particle system that simulates exploding confetti.',
+    category: AnimationCategory.customPainter,
+    accentColor: Colors.redAccent,
+    builder: () => const ConfettiDemo(),
+    sourceCode: confettiCode,
+  ),
+  AnimationItem(
+    id: 'water_ripple',
+    name: 'Water Ripple',
+    description: 'Concentric animated ripples that expand and fade out from a tap.',
+    category: AnimationCategory.customPainter,
+    accentColor: Colors.blueAccent,
+    builder: () => const WaterRippleDemo(),
+    sourceCode: waterRippleCode,
+  ),
+  AnimationItem(
+    id: 'glitch_text',
+    name: 'Glitch Text',
+    description: 'A cyber-punk style glitch effect that shifts RGB channels.',
+    category: AnimationCategory.explicit,
+    accentColor: Colors.redAccent,
+    builder: () => const GlitchTextDemo(),
+    sourceCode: glitchTextCode,
+  ),
+  AnimationItem(
+    id: 'matrix_rain',
+    name: 'Matrix Rain',
+    description: 'The classic falling green characters effect.',
+    category: AnimationCategory.customPainter,
+    accentColor: Colors.greenAccent,
+    builder: () => const MatrixRainDemo(),
+    sourceCode: matrixRainCode,
+  ),
+  AnimationItem(
+    id: 'circular_fab',
+    name: 'Circular FAB Menu',
+    description: 'A floating action button that explodes into multiple icons.',
+    category: AnimationCategory.explicit,
+    accentColor: Colors.indigo,
+    builder: () => const CircularFabMenuDemo(),
+    sourceCode: circularFabMenuCode,
+  ),
+  AnimationItem(
+    id: 'typing_indicator',
+    name: 'Typing Indicator',
+    description: 'A staggered animation of three dots bouncing sequentially.',
+    category: AnimationCategory.staggered,
+    accentColor: Colors.grey,
+    builder: () => const TypingIndicatorDemo(),
+    sourceCode: typingIndicatorCode,
+  ),
+  AnimationItem(
+    id: 'jelly_button',
+    name: 'Jelly Bounce Button',
+    description: 'A physics-like button that squishes down and bounces elastically.',
+    category: AnimationCategory.implicit,
+    accentColor: Colors.pinkAccent,
+    builder: () => const JellyButtonDemo(),
+    sourceCode: jellyButtonCode,
+  ),
+  AnimationItem(
+    id: 'magnetic_button',
+    name: 'Magnetic Button',
+    description: 'A button that attracts towards touch and snaps back using spring physics.',
+    category: AnimationCategory.physics,
+    accentColor: Colors.deepPurpleAccent,
+    builder: () => const MagneticButtonDemo(),
+    sourceCode: magneticButtonCode,
   ),
 ];
