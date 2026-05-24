@@ -15,6 +15,6 @@ void main() {
     await tester.pumpWidget(const AnimationShowcaseApp());
 
     // Verify that the title is present.
-    expect(find.text('All Animations'), findsOneWidget);
+    expect(find.text('Animation Showcase'), findsOneWidget);
   });
 }

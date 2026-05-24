@@ -48,7 +48,7 @@ class AppDrawer extends StatelessWidget {
             title: const Text('All Animations',
                 style: TextStyle(color: Colors.white)),
             selected: selectedCategory == null,
-            selectedTileColor: Colors.white.withOpacity(0.1),
+            selectedTileColor: Colors.white.withValues(alpha: 0.1),
             onTap: () {
               onCategorySelected(null);
               Navigator.pop(context);
@@ -60,7 +60,7 @@ class AppDrawer extends StatelessWidget {
             child: Text(
               'CATEGORIES',
               style: TextStyle(
-                color: Colors.white.withOpacity(0.3),
+                color: Colors.white.withValues(alpha: 0.3),
                 fontSize: 12,
                 fontWeight: FontWeight.bold,
                 letterSpacing: 1.2,
@@ -78,7 +78,7 @@ class AppDrawer extends StatelessWidget {
                   title: Text(category.label,
                       style: const TextStyle(color: Colors.white)),
                   selected: selectedCategory == category,
-                  selectedTileColor: Colors.white.withOpacity(0.1),
+                  selectedTileColor: Colors.white.withValues(alpha: 0.1),
                   onTap: () {
                     onCategorySelected(category);
                     Navigator.pop(context);
