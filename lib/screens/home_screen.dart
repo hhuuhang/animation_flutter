@@ -47,7 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     hintText: 'Search animations...',
                     prefixIcon: const Icon(Icons.search),
                     filled: true,
-                    fillColor: Colors.white.withValues(alpha: 0.05),
+                    fillColor: Colors.white.withOpacity(0.05),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                       borderSide: BorderSide.none,
@@ -65,7 +65,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       selected: _selectedCategory == null,
                       onSelected: (_) =>
                           setState(() => _selectedCategory = null),
-                      selectedColor: const Color(0xFF6C63FF).withValues(alpha: 0.3),
+                      selectedColor: const Color(0xFF6C63FF).withOpacity(0.3),
                     ),
                     const SizedBox(width: 8),
                     ...AnimationCategory.values.map((cat) => Padding(
@@ -77,7 +77,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             onSelected: (_) =>
                                 setState(() => _selectedCategory = cat),
                             selectedColor:
-                                const Color(0xFF6C63FF).withValues(alpha: 0.3),
+                                const Color(0xFF6C63FF).withOpacity(0.3),
                           ),
                         )),
                   ],
